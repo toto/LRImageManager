@@ -194,7 +194,9 @@ NSString *const LRImageManagerSizeUserInfoKey = @"LRImageManagerSizeUserInfoKey"
                 
                 if (self.showNetworkActivityIndicator && [self.ongoingOperations count] == 0)
                 {
+#ifdef LR_IS_USED_IN_EXTENSION                    
                     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+#endif
                 }
             });
         }];
@@ -209,7 +211,9 @@ NSString *const LRImageManagerSizeUserInfoKey = @"LRImageManagerSizeUserInfoKey"
         
         if (self.showNetworkActivityIndicator)
         {
+#ifdef LR_IS_USED_IN_EXTENSION
             [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+#endif
         }
     }
 }
